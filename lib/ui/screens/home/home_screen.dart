@@ -43,11 +43,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> tabs = [
-    QuranTab(),
-    HadithTab(),
-    SebhaTab(),
-    RadioTab(),
-    TimesTab(),
+    const QuranTab(),
+    const HadithTab(),
+    const SebhaTab(),
+    const RadioTab(),
+    const TimesTab(),
   ];
 
   String getBackgroundImageName() {

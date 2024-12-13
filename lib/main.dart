@@ -17,9 +17,9 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Janna LT'),
       initialRoute: SplashScreen.tag,
       routes: {
-        SplashScreen.tag : (context)=> SplashScreen(),
-        IntroScreen.tag : (context)=> IntroScreen(),
-        HomeScreen.tag : (context)=> HomeScreen(),
+        SplashScreen.tag : (context)=> const SplashScreen(),
+        IntroScreen.tag : (context)=> const IntroScreen(),
+        HomeScreen.tag : (context)=> const HomeScreen(),
       },
     );
   }
