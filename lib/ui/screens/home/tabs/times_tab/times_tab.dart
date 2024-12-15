@@ -6,14 +6,41 @@ class TimesTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Times Tab',
-            style: TxtStyle.mid,
-          )
-        ],
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/onBoarding_header.png'),
+              SizedBox(height: 16,),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  color: Color(0xff856B3F)
+                ),
+                child: Image.asset('assets/images/prayTimes.png' , fit: BoxFit.cover,),
+              ),
+              SizedBox(height: 16,),
+              Row(
+                children: [
+                  Text('   Azkar' , style:TxtStyle.small),
+                ],
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset('assets/images/eveningAzkar.png' , fit: BoxFit.cover,),
+                  Image.asset('assets/images/morningAzkar.png' , fit: BoxFit.cover,),
+                ]
+              )
+          ],
+                ),
+        ),
       ),
     );
   }
