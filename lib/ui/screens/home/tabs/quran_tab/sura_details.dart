@@ -15,9 +15,8 @@ class _SuraDetailsState extends State<SuraDetails> {
   String fileContent = '';
   @override
   Widget build(BuildContext context) {
-    final sura = Suras.suraList;
-    final index = ModalRoute.settingsOf(context)?.arguments as int;
-    final item = sura[index];
+    final sura = ModalRoute.settingsOf(context)?.arguments as SuraModel;
+    final index = Suras.suraList.indexOf(sura) ;
     if (fileContent.isEmpty) {
       getSuraContent(index);
     }
@@ -26,16 +25,12 @@ class _SuraDetailsState extends State<SuraDetails> {
       backgroundColor: Style.secondaryColor,
       appBar: AppBar(
         backgroundColor: Style.secondaryColor,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Style.primaryColor,
-            )),
+        surfaceTintColor: Colors.transparent,
+        iconTheme: IconThemeData(
+          color: Style.primaryColor
+        ),
         title: Text(
-          item.nameEn,
+          sura.nameEn,
           style: TxtStyle.regular.copyWith(color: Style.primaryColor),
         ),
         centerTitle: true,
@@ -48,17 +43,19 @@ class _SuraDetailsState extends State<SuraDetails> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset('assets/images/suraSide1.png'),
-                Column(
-                  children: [
-                    Text(" سورة ${item.nameAr}",
-                    //textDirection: TextDirection.rtl,
-                        style:
-                            TxtStyle.regular.copyWith(color: Style.primaryColor),),
-                            const SizedBox(height: 24,),
-                    Text( index == 8 || index == 0 ? '' :'بسم الله الرحمن الرحيم',
-                        style:
-                            TxtStyle.small.copyWith(color: Style.primaryColor),),
-                  ],
+                Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Column(
+                    children: [
+                      Text(" سورة ${sura.nameAr}",
+                          style:
+                              TxtStyle.regular.copyWith(color: Style.primaryColor),),
+                              const SizedBox(height: 24,),
+                      Text( index == 8 || index == 0 ? '' :'بسم الله الرحمن الرحيم',
+                          style:
+                              TxtStyle.small.copyWith(color: Style.primaryColor),),
+                    ],
+                  ),
                 ),
                 Image.asset('assets/images/suraSide2.png'),
               ],
@@ -99,7 +96,7 @@ class _SuraDetailsState extends State<SuraDetails> {
     setState(() {});
     List<String> suraLines = fileContent.trim().split('\n');
     for (int i = 0; i < suraLines.length; i++) {
-      suraLines[i] += "[${i+1}]";
+      suraLines[i] += "(${i+1})";
     }
     fileContent = suraLines.join();
   }

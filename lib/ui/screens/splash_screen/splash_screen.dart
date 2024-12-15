@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islami_pojo/ui/cache/cache_helper.dart';
+import 'package:islami_pojo/ui/screens/home/home_screen.dart';
 import 'package:islami_pojo/ui/screens/introduction/intro_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -8,7 +10,11 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(Duration(seconds: 3), () {
-    Navigator.pushReplacementNamed(context, IntroScreen.tag);
+    final eligibility = CacheHelper.getEligibility() ?? false;
+      Navigator.pushReplacementNamed(
+        context,
+        eligibility ? HomeScreen.tag : IntroScreen.tag,
+      );
     });
     return SafeArea(
       top: false,

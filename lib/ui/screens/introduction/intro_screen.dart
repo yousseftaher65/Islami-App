@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islami_pojo/ui/cache/cache_helper.dart';
 import 'package:islami_pojo/ui/screens/home/home_screen.dart';
 import 'package:islami_pojo/ui/theme/style.dart';
 
@@ -41,7 +42,8 @@ class IntroScreen extends StatelessWidget {
           color: const Color(0xff707070)),
       globalBackgroundColor: Style.secondaryColor,
       showDoneButton: true,
-      onDone: () {
+      onDone: () async {
+       await CacheHelper.saveEligibility();
         Navigator.pushReplacementNamed(context, HomeScreen.tag);
       },
       showNextButton: true,

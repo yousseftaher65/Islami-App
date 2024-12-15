@@ -3,9 +3,15 @@ class SuraModel {
   String nameEn;
   int versesNum;
   SuraModel(this.nameAr, this.nameEn, this.versesNum ,);
+
+   @override
+  String toString() {
+    return 'SuraModel(nameAr: $nameAr, nameEn: $nameEn, versesNum: $versesNum)';
+  }
 }
 
 abstract final class Suras {
+  static  List <SuraModel> searchResults = [];
   static final List<SuraModel> suraList = [
     SuraModel("الفاتحه", "Al-Fatiha", 7),
     SuraModel("البقرة", "Al-Baqarah", 286),
