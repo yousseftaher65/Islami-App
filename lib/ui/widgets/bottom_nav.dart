@@ -61,7 +61,7 @@ class _BottomNavState extends State<BottomNav> {
               borderRadius: BorderRadius.circular(40),
               color: Style.accentColor,
             ),
-            padding: EdgeInsets.symmetric(vertical: 6, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 20),
             child: ImageIcon(
               size: 30,
               AssetImage('assets/images/${imageName}Icon.png'),

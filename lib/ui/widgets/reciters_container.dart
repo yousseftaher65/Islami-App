@@ -16,9 +16,9 @@ class RecitersContainer extends StatelessWidget {
           itemBuilder: (context, index) {
             return Container(
               height: size.height * 0.15,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/images/radioCard.png') ,
+                      image:  AssetImage('assets/images/radioCard.png') ,
                       fit: BoxFit.cover)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -31,9 +31,9 @@ class _QuranTabState extends State<QuranTab> {
           Image.asset('assets/images/onBoarding_header.png'),
           SearchField(
             onSearch: (txt) {
-        userTxt = txt;
-        print("userTxt : ${Suras.searchResults}");
-        setState(() {});
+        setState(() {
+           userTxt = txt;
+        });
       },
           ),
           SizedBox(
@@ -46,7 +46,7 @@ class _QuranTabState extends State<QuranTab> {
           SizedBox(
             height: size.height * 0.016,
           ),
-          Suras.searchResults.isNotEmpty ? SizedBox() : MostRecent(),
+          Suras.searchResults.isNotEmpty ? const SizedBox() : const MostRecent(),
           SizedBox(
             height: size.height * 0.016,
           ),

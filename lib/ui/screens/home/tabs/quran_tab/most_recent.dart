@@ -11,7 +11,7 @@ class MostRecent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
-    final sura = Suras.suraList;
+    final suras = Suras.suraList;
 
     return SizedBox(
       height: size.height * 0.16,
@@ -21,15 +21,15 @@ class MostRecent extends StatelessWidget {
             width: 8,
           );
         },
-        itemCount: Suras.suraList.length,
+        itemCount: suras.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          final item = sura[index];
+          final item = suras[index];
           return InkWell(
             onTap: () {
-              Navigator.pushNamed(context, SuraDetails.tag, arguments: index);
+              Navigator.pushNamed(context, SuraDetails.tag, arguments: item);
             },
-            overlayColor: WidgetStatePropertyAll(Colors.transparent),
+            overlayColor: const WidgetStatePropertyAll(Colors.transparent),
             child: Container(
               padding: const EdgeInsets.all(16),
               width: size.width * 0.70,

@@ -11,6 +11,7 @@ class SebhaTab extends StatefulWidget {
 class _SebhaTabState extends State<SebhaTab> {
   double turns = 0;
   int num = 0;
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -54,34 +55,36 @@ class _SebhaTabState extends State<SebhaTab> {
                 Positioned(
                   child: InkWell(
                     customBorder: const CircleBorder(),
-                    overlayColor: const WidgetStatePropertyAll(Colors.transparent),
+                    overlayColor:
+                        const WidgetStatePropertyAll(Colors.transparent),
                     onTap: () {
-                      setState(() => turns += 1 / 33);
-                            num++;
-                            if (num > 100) {
-                              num = 0;
-                            }
+                      setState(() => turns += 1 / 30);
+                      num++;
+                      if (num > 100) {
+                        num = 0;
+                      }
+                      changer();
                     },
                     child: Container(
-                      decoration: const ShapeDecoration(
-                           shape: CircleBorder()),
+                      decoration: const ShapeDecoration(shape: CircleBorder()),
                       padding: const EdgeInsets.all(80),
-                      
                       child: Column(
                         children: [
                           Text(
-                          changer(),
-                          style: num == 100
-                              ? TxtStyle.small
-                              : TxtStyle.regular.copyWith(
-                                  fontSize: 36,
-                                ),
+                            changer(),
+                            style: num == 100
+                                ? TxtStyle.small
+                                : TxtStyle.regular.copyWith(
+                                    fontSize: 36,
+                                  ),
                           ),
-                          const SizedBox(height: 24,),
+                          const SizedBox(
+                            height: 24,
+                          ),
                           Text(
-                    '$num',
-                    style: TxtStyle.regular.copyWith(fontSize: 36),
-                  ),
+                            '$counter',
+                            style: TxtStyle.regular.copyWith(fontSize: 36),
+                          ),
                         ],
                       ),
                     ),
@@ -97,12 +100,16 @@ class _SebhaTabState extends State<SebhaTab> {
 
   String changer() {
     if (num > 33 && num <= 66) {
+      counter = num - 33;
       return 'الحمد الله';
     } else if (num > 66 && num <= 99) {
+      counter = num - 66;
       return 'الله أكبر';
     } else if (num == 100) {
+      counter = 0;
       return 'لا إله إلا الله وحده لا شريك له له الملك\n وله الحمد وهو على كل شيء قدير';
     }
+    counter = num;
     return 'سبحان الله';
   }
 }

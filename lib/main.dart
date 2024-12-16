@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
         SplashScreen.tag: (context) => const SplashScreen(),
         IntroScreen.tag: (context) => const IntroScreen(),
         HomeScreen.tag: (context) => const HomeScreen(),
-        SuraDetails.tag: (context) =>  SuraDetails(),
+        SuraDetails.tag: (context) => const SuraDetails(),
       },
     );
   }

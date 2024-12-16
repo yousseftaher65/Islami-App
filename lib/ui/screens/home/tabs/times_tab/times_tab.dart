@@ -14,21 +14,21 @@ class TimesTab extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset('assets/images/onBoarding_header.png'),
-              SizedBox(height: 16,),
+              const SizedBox(height: 16,),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
-                  color: Color(0xff856B3F)
+                  color: const Color(0xff856B3F)
                 ),
                 child: Image.asset('assets/images/prayTimes.png' , fit: BoxFit.cover,),
               ),
-              SizedBox(height: 16,),
-              Row(
+              const SizedBox(height: 16,),
+              const Row(
                 children: [
                   Text('   Azkar' , style:TxtStyle.small),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Row(

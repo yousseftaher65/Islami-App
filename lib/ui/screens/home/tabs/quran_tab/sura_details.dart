@@ -26,7 +26,7 @@ class _SuraDetailsState extends State<SuraDetails> {
       appBar: AppBar(
         backgroundColor: Style.secondaryColor,
         surfaceTintColor: Colors.transparent,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Style.primaryColor
         ),
         title: Text(

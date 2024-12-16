@@ -9,7 +9,6 @@ class CacheHelper {
 
   static Future<bool> saveEligibility() async {
     bool result = await prefs.setBool("onBoarding", true);
-    print('Save result: $result'); // Debug log
     return result;
   }
 
