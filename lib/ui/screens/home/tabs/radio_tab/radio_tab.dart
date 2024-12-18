@@ -50,7 +50,7 @@ class _RadioTabState extends State<RadioTab> {
             const SizedBox(
               height: 24,
             ),
-            currentIndex == 1 ? const RecitersContainer() : const RadioContainer(),
+            currentIndex == 1 ?  RecitersContainer() :  RadioContainer(),
           ],
         ),
       ),

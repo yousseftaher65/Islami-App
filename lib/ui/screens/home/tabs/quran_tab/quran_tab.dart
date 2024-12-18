@@ -31,10 +31,11 @@ class _QuranTabState extends State<QuranTab> {
           Image.asset('assets/images/onBoarding_header.png'),
           SearchField(
             onSearch: (txt) {
-        setState(() {
-           userTxt = txt;
-        });
-      },
+              userTxt = txt;
+              setState(() {
+                print(Suras.searchResults);
+              });
+            },
           ),
           SizedBox(
             height: size.height * 0.016,
@@ -46,32 +47,17 @@ class _QuranTabState extends State<QuranTab> {
           SizedBox(
             height: size.height * 0.016,
           ),
-          Suras.searchResults.isNotEmpty ? const SizedBox() : const MostRecent(),
+          Suras.searchResults.isNotEmpty
+              ? const SizedBox()
+              : const MostRecent(),
           SizedBox(
             height: size.height * 0.016,
           ),
-          SuraList(userTxt: userTxt,),
+          SuraList(
+            userTxt: userTxt,
+          ),
         ],
       ),
     );
   }
 }
-
-
- // onSearch(String text) {
-  //   text = userTxt.toLowerCase();
-  //   Suras.searchResults.clear();
-  //   if (text.isEmpty) {
-  //     setState(() {});
-  //     return;
-  //   }
-
-  //   for (var data in Suras.suraList) {
-  //     if (data.nameAr.contains(text) ||
-  //         data.nameEn.toLowerCase().contains(text.toLowerCase())) {
-  //       Suras.searchResults.add(data);
-  //     }
-  //   }
-  //   print("${Suras.searchResults}");
-  //   setState(() {});
-  // }

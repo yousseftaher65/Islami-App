@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_pojo/ui/theme/style.dart';
 
 class RadioContainer extends StatelessWidget {
-  const RadioContainer({super.key});
+   RadioContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,27 +14,63 @@ class RadioContainer extends StatelessWidget {
               ),
           itemCount: 4,
           itemBuilder: (context, index) {
-            return Container(
-              height: size.height * 0.15,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/radioCard.png'),
-                      fit: BoxFit.cover)),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    'Radio Malik shaibat Alhamed',
-                    style:
-                        TxtStyle.regular.copyWith(color: Style.secondaryColor),
-                  ),
-                  Image.asset(
-                    'assets/images/playRadio.png',
-                  ),
-                ],
-              ),
-            );
+            return index == 1
+                ? Container(
+                    height: size.height * 0.15,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Style.primaryColor,
+                      image: DecorationImage(
+                          alignment: Alignment.bottomCenter,
+                          opacity: .5,
+                          image: AssetImage('assets/images/soundWave 1.png'),
+                          fit: BoxFit.contain),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'Radio ${getNameList[index]}',
+                          style: TxtStyle.regular
+                              .copyWith(color: Style.secondaryColor),
+                        ),
+                        Image.asset(
+                          'assets/images/radioPlay.png',
+                        ),
+                      ],
+                    ),
+                  )
+                : Container(
+                    height: size.height * 0.15,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/radioCard.png'),
+                          fit: BoxFit.cover),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'Radio ${getNameList[index]}',
+                          style: TxtStyle.regular
+                              .copyWith(color: Style.secondaryColor),
+                        ),
+                        Image.asset(
+                          index == 2 || index == 3
+                         ?'assets/images/radioPlay2.png'
+                         : 'assets/images/radioPlay.png',
+                        ),
+                      ],
+                    ),
+                  );
           }),
     );
   }
+  final List<String> getNameList = [
+    'Ibrahim Al-Akdar',
+    'Al-Qaria Yassen',
+    'Ahmed Al-trabulsi',
+    "Addokali Mohammad Alalim"
+  ];
 }

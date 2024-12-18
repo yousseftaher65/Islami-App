@@ -9,7 +9,7 @@ class SuraList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Suras.searchResults.clear();
+    
     Suras.searchResults = Suras.suraList.where((sura) {
       return sura.nameAr.contains(userTxt) || sura.nameEn.toLowerCase().contains(userTxt);
     }).toList();
