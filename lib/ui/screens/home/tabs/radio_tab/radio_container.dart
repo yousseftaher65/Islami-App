@@ -20,7 +20,7 @@ class RadioContainer extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Style.primaryColor,
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           alignment: Alignment.bottomCenter,
                           opacity: .5,
                           image: AssetImage('assets/images/soundWave 1.png'),
@@ -44,7 +44,7 @@ class RadioContainer extends StatelessWidget {
                     height: size.height * 0.15,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage('assets/images/radioCard.png'),
                           fit: BoxFit.cover),
                     ),

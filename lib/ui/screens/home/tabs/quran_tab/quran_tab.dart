@@ -33,7 +33,6 @@ class _QuranTabState extends State<QuranTab> {
             onSearch: (txt) {
               userTxt = txt;
               setState(() {
-                print(Suras.searchResults);
               });
             },
           ),

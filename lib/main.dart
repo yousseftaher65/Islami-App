@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_pojo/ui/cache/cache_helper.dart';
 import 'package:islami_pojo/ui/screens/home/home_screen.dart';
+import 'package:islami_pojo/ui/screens/home/tabs/hadith_tab/hadith_details.dart';
 import 'package:islami_pojo/ui/screens/home/tabs/quran_tab/sura_details.dart';
 import 'package:islami_pojo/ui/screens/introduction/intro_screen.dart';
 import 'package:islami_pojo/ui/screens/splash_screen/splash_screen.dart';
@@ -25,6 +26,7 @@ class MainApp extends StatelessWidget {
         IntroScreen.tag: (context) => const IntroScreen(),
         HomeScreen.tag: (context) => const HomeScreen(),
         SuraDetails.tag: (context) => const SuraDetails(),
+        HadithDetails.tag: (context) => const HadithDetails(),
       },
     );
   }

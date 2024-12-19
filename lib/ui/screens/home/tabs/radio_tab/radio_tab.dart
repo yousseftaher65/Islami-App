@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_pojo/ui/theme/style.dart';
-import 'package:islami_pojo/ui/widgets/radio_container.dart';
-import 'package:islami_pojo/ui/widgets/reciters_container.dart';
+import 'package:islami_pojo/ui/screens/home/tabs/radio_tab/radio_container.dart';
+import 'package:islami_pojo/ui/screens/home/tabs/radio_tab/reciters_container.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 class RadioTab extends StatefulWidget {
